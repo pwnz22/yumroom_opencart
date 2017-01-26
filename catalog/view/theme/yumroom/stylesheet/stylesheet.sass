@@ -18,14 +18,16 @@ header
     padding: 7px 0
     .dropdown
         display: inline-block
-        a.dropdown-toggle
-            color: #999
-            font-size: 14px
-            padding: 8px 0 4px
-            display: block
-            &:hover, &:active, &:focus
-                color: #fff
-                text-decoration: none
+        a
+            transition: all .25s ease
+            &.dropdown-toggle
+                color: #999
+                font-size: 14px
+                padding: 8px 0 4px
+                display: block
+                &:hover, &:active, &:focus
+                    color: #fff
+                    text-decoration: none
 
 ul.col-md-3
     margin: 0
@@ -92,6 +94,13 @@ ul.col-md-3
 
 .top-menu
     border-bottom: 1px solid #ededed
+    margin-bottom: 40px
+    .cart-wrapper
+        .dropdown-menu
+            width: 460px
+            padding: 15px
+            .table-striped
+
     a
         color: #333
     .navbar
@@ -124,6 +133,18 @@ ul.col-md-3
         font-size: 16px
         text-align: left
 
+#cart button + .dropdown-menu
+    margin-top: 1px
+    .btn-danger
+        border-radius: 15em
+        font-size: 12px
+        width: 20px
+        height: 20px
+        line-height: 0
+        text-align: center
+        padding: 0
+        background-color: #d9534f
+
 .cart-wrapper
     padding-left: 0
 
@@ -134,9 +155,6 @@ ul.col-md-3
     border: none
     box-shadow: none
     border-radius: 0
-
-.top-menu
-    margin-bottom: 40px
 
 .list-group-item
     padding: 12px 15px
@@ -167,5 +185,86 @@ button.list-group-item:hover
     background-color: darken($accentb, 5%)
     border-color: darken($accentb, 5%)
     text-indent: 10px
+
+.common-home
+    #content
+        .owl-carousel
+            margin-bottom: 60px
+        h3
+            text-align: center
+            font-size: 28px
+            font-family: 'MyriadSetProThin', sans-serif
+            margin-bottom: 40px
+            margin-top: 80px
+
+.product-layout
+    .price
+        font-size: 18px
+        font-family: 'MyriadSetProThin', sans-serif
+        .price-old
+            font-size: 15px
+            text-decoration: line-through
+    > .product-thumb
+        transition: box-shadow .25s ease
+        padding-top: 40px
+        margin-bottom: 40px
+        text-align: center
+        .image
+            padding: 0 25px
+        &:hover
+            box-shadow: #ededed 0 0 0 1px inset
+    .caption
+        padding: 0 25px
+        p
+            display: none
+            &.price
+                display: block
+            .price-tax
+                display: none
+        .rating
+            display: none
+    h4
+        margin-top: 25px
+        a
+            color: #333
+            font-size: 22px
+            font-family: 'MyriadSetProThin', sans-serif
+            &:hover, &:focus
+                text-decoration: none
+                border-bottom: 1px solid #333
+    .button-group
+        margin-top: 15px
+        > *
+            display: none
+            &:first-child
+                display: block
+            &.toclick
+                display: block
+    button, .button
+        &.toclick
+            font-size: 14px
+            color: #777
+            background-color: #f5f1f3
+            padding: 9px 0
+            &:hover, &:focus
+                background-color: darken(#f5f1f3, 3%)
+        border: none
+        background-color: $accentb
+        color: #fff
+        width: 100%
+        padding: 8px 0
+        font-size: 18px
+        transition: background-color .25s ease
+        outline: none
+        &:hover, &:focus
+            background-color: lighten($accentb, 5%)
+            text-decoration: none
+        &:active
+            background-color: darken($accentb, 5%)
+        .fa
+            display: none
+
+.alert
+    border-radius: 0
 
 @import "media"
